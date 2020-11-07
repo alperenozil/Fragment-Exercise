@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <fragment
+    <FrameLayout
         android:id="@+id/fragment2"
         android:name="com.alperenozil.fragmentexercise.BlankFragment"
         android:layout_width="200dp"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout="@layout/fragment_blank" />
 
-    <fragment
+    <FrameLayout
         android:id="@+id/fragment_container"
         android:name="com.alperenozil.fragmentexercise.BlankFragment"
         android:layout_width="100dp"
@@ -26,5 +26,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="add"
+        android:text="add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="remove"
+        android:text="remove"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

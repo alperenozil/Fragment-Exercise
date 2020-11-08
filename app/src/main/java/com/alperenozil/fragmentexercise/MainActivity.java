@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         BlankFragment blankFragment=new BlankFragment();
         getSupportFragmentManager()
                 .beginTransaction()
+                .addToBackStack(null)//when user clicks back button it removes fragment that loaded lastly.
                 .add(R.id.fragment_container, blankFragment)
                 .commit();
 

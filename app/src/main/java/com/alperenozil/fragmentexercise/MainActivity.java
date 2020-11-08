@@ -15,12 +15,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void add(View view){
+        Bundle arguments = new Bundle();
+        arguments.putString(BlankFragment.MESSAGE_KEY,"Passed as an argument");
         BlankFragment blankFragment=new BlankFragment();
+        blankFragment.setArguments(arguments);
         getSupportFragmentManager()
                 .beginTransaction()
                 .addToBackStack(null)//when user clicks back button it removes fragment that loaded lastly.
                 .add(R.id.fragment_container, blankFragment)
                 .commit();
+
 
     }
     public void remove(View view){

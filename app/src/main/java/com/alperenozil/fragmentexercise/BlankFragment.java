@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,6 +19,7 @@ import android.view.ViewGroup;
  */
 public class BlankFragment extends Fragment {
     private static final String TAG = "BlankFragment";
+    public static final String MESSAGE_KEY = "message_key";
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -106,6 +108,13 @@ public class BlankFragment extends Fragment {
                              Bundle savedInstanceState) {
         Log.d(TAG, "onCreateView: ");
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blank, container, false);
+        View view = inflater.inflate(R.layout.fragment_blank, container, false);
+        Bundle arguments=getArguments();
+        if (arguments!=null) {
+            String message=arguments.getString(MESSAGE_KEY);
+            TextView textView=view.findViewById(R.id.textView);
+            textView.setText(message);
+        }
+        return view;
     }
 }

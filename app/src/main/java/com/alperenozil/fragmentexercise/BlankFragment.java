@@ -61,6 +61,15 @@ public class BlankFragment extends Fragment {
         }
     }
 
+    public static BlankFragment newInstance(String message) {
+        
+        Bundle args = new Bundle();
+        args.putString(MESSAGE_KEY,message);
+        BlankFragment fragment = new BlankFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     @Override
     public void onResume() {
         super.onResume();
